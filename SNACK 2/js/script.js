@@ -13,3 +13,16 @@ function getRandomNumber(min, max) {
     { nome: 'Inter', puntiFatti: 0, falliSubiti: 0 },
     { nome: 'Milan', puntiFatti: 0, falliSubiti: 0 },
   ];
+
+  // Genera numeri casuali per punti fatti e falli subiti
+squadre.forEach(squadra => {
+    squadra.puntiFatti = getRandomNumber(1, 100);
+    squadra.falliSubiti = getRandomNumber(1, 50);
+  });
+  
+  // Nuovo array con solo nomi e falli subiti
+  const nuovoArray = squadre.map(({ nome, falliSubiti }) => ({ nome, falliSubiti }));
+  
+  console.log('Array di squadre:', squadre);
+  console.log('Nuovo array con nomi e falli subiti:', nuovoArray);
+  
