@@ -33,3 +33,16 @@ const bikes = [
         peso: "6"
     },
 ];
+
+let bici;
+for (let i = 1; i < bikes.length; i++) {
+    let {peso} = bikes[i];
+    if(parseInt(peso) < bikes[0].peso){
+        peso_minore = peso;
+        bici = bikes[i].name;
+    }
+}
+const mex = document.getElementById('mex');
+let text = `${bici} è la bicicletta meno pesante : ${peso_minore}`;
+mex.innerText = text;
+console.log(text);
